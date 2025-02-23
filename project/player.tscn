@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://4shmpdj4xvjh"]
+[gd_scene load_steps=6 format=3 uid="uid://4shmpdj4xvjh"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_cutvq"]
 [ext_resource type="Texture2D" uid="uid://cecynn3jevp72" path="res://Images/Princess Image.png" id="2_fqrdh"]
+[ext_resource type="PackedScene" uid="uid://bhjo7jilrm7mk" path="res://fireball.tscn" id="2_xxegm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pt8oe"]
 animations = [{
@@ -18,9 +19,10 @@ animations = [{
 radius = 42.0
 height = 206.0
 
-[node name="Player" type="Area2D"]
-position = Vector2(79, 170)
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(47, 155)
 script = ExtResource("1_cutvq")
+fireball_scene = ExtResource("2_xxegm")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -33,4 +35,4 @@ animation = &"Princess"
 position = Vector2(16, 17)
 shape = SubResource("CapsuleShape2D_mo1x3")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="BulletSpawnPoint" type="Marker2D" parent="."]

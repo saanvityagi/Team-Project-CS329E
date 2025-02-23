@@ -18,7 +18,7 @@ offset_right = 240.0
 offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.74978, 0.74978, 0.74978, 1)
+color = Color(0.745496, 0.74976, 0.761426, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_di4pe")]
 position = Vector2(178, 481)

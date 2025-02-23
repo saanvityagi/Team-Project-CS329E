@@ -1,7 +1,9 @@
-extends Area2D
+extends CharacterBody2D
 signal hit
 @export var speed = 400
+@export var fireball_scene: PackedScene
 var screen_size
+var last_direction = Vector2.RIGHT 
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,6 +14,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	var direction = Vector2.ZERO 
 	var velocity = Vector2.ZERO # The player's movement vector.
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
@@ -24,6 +27,7 @@ func _process(delta):
 
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
+		last_direction = velocity.normalized() 
 		$AnimatedSprite2D.play()
 	else:
 		$AnimatedSprite2D.stop()
@@ -36,9 +40,19 @@ func _process(delta):
 		$AnimatedSprite2D.flip_v = false
 	# See the note below about the following boolean assignment.
 		$AnimatedSprite2D.flip_h = velocity.x > 0
-	#elif velocity.y != 0:
-		#$AnimatedSprite2D.animation = "up"
-		#$AnimatedSprite2D.flip_v = velocity.y > 0
+	
+		
+	if Input.is_action_just_pressed("shoot"):
+		shoot()
+		
+	if direction.length() > 0:
+		velocity = direction.normalized() * speed
+		$AnimatedSprite2D.play()
+		last_direction = direction.normalized()  # Update last direction when moving
+	else:
+		velocity = Vector2.ZERO  # Stop movement when no input is detected
+		$AnimatedSprite2D.stop()
+		
 	
 
 
@@ -52,3 +66,17 @@ func start(pos):
 	position = pos
 	show()
 	$CollisionShape2D.disabled = false
+	
+	
+
+func shoot():
+	print("Shoot function called!")  # Debug print
+	if fireball_scene:
+		var fireball = fireball_scene.instantiate()
+		fireball.position = $BulletSpawnPoint.global_position
+		fireball.direction = last_direction  
+		get_parent().add_child(fireball)  
+		print("Fireball spawned at:", fireball.position) 
+
+		
+		get_tree().get_root().get_node("Main").add_child(fireball)
