@@ -28,3 +28,8 @@ func fireball(body: Node2D) -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	pass 
+
+func _on_body_entered(body):
+	if body.is_in_group("guard"):  # Make sure the guard is in the "guard" group
+		body.take_damage()
+		queue_free()  # Destroy the power ball

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqw2vae138t0h"]
+
+[ext_resource type="Script" path="res://guard.gd" id="1_cqfvk"]
+[ext_resource type="Texture2D" uid="uid://b40lhb5b7s5tu" path="res://shocked.png" id="2_6vbrk"]
+[ext_resource type="AudioStream" uid="uid://s1w6p7edl85k" path="res://male-death-sound-128357.mp3" id="3_4mh6s"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sg54h"]
+radius = 23.0
+height = 68.0
+
+[node name="Guard" type="CharacterBody2D" groups=["guard"]]
+position = Vector2(-21, -34)
+script = ExtResource("1_cqfvk")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(413, 629)
+scale = Vector2(0.132812, 0.164063)
+texture = ExtResource("2_6vbrk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(409, 629)
+shape = SubResource("CapsuleShape2D_sg54h")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(408, 637)
+stream = ExtResource("3_4mh6s")
