@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dij1xtba4w4sv"]
+
+[ext_resource type="Texture2D" uid="uid://b4l5gkqd1bbqg" path="res://Images/maze tile.png" id="1_2bert"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pplrv"]
+
+[node name="Verticalline" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pplrv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 194)
+scale = Vector2(0.03125, 0.710156)
+texture = ExtResource("1_2bert")

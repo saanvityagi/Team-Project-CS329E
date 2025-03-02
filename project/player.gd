@@ -53,8 +53,7 @@ func _process(delta):
 		velocity = Vector2.ZERO  # Stop movement when no input is detected
 		$AnimatedSprite2D.stop()
 		
-	
-
+	move_and_slide()
 
 func _on_body_entered(body):
 	hide() # Player disappears after being hit.

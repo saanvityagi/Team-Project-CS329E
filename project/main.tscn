@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5ennpg7mwrmb"]
+[gd_scene load_steps=6 format=3 uid="uid://b5ennpg7mwrmb"]
 
 [ext_resource type="PackedScene" uid="uid://4shmpdj4xvjh" path="res://player.tscn" id="1_di4pe"]
 [ext_resource type="Script" path="res://main.gd" id="1_wbref"]
 [ext_resource type="AudioStream" uid="uid://cokew480lmbv2" path="res://bgm.mp3" id="3_mum0y"]
 [ext_resource type="PackedScene" path="res://guard.tscn" id="4_hydyy"]
+[ext_resource type="PackedScene" uid="uid://dryf1rj4vlwpu" path="res://horizontalline.tscn" id="5_2mdxb"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_wbref")
@@ -18,18 +19,21 @@ anchor_left = 0.283
 anchor_top = 0.476
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -203.76
-offset_top = -342.72
-offset_right = 360.0
-offset_bottom = 360.0
+offset_left = -393.388
+offset_top = -478.62
+offset_right = 731.217
+offset_bottom = 496.58
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.745496, 0.74976, 0.761426, 1)
+color = Color(0.384335, 0.38924, 0.402707, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_di4pe")]
-position = Vector2(178, 481)
+position = Vector2(619, 47)
 
 [node name="StartPosition" type="Marker2D" parent="."]
 position = Vector2(195, 509)
 
 [node name="Guard" parent="." instance=ExtResource("4_hydyy")]
+
+[node name="HorizontalLine" parent="." instance=ExtResource("5_2mdxb")]
+position = Vector2(114, -26)

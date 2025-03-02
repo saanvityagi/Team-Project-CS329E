@@ -16,23 +16,22 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mo1x3"]
-radius = 42.0
-height = 206.0
+radius = 25.0
+height = 88.0
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(47, 155)
+position = Vector2(106, 147)
 script = ExtResource("1_cutvq")
 fireball_scene = ExtResource("2_xxegm")
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(9.99997, 4)
-scale = Vector2(0.241071, 0.251202)
+position = Vector2(24, 0.374986)
+scale = Vector2(0.138393, 0.102464)
 sprite_frames = SubResource("SpriteFrames_pt8oe")
 animation = &"Princess"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(16, 17)
+position = Vector2(27, 5)
 shape = SubResource("CapsuleShape2D_mo1x3")
 
 [node name="BulletSpawnPoint" type="Marker2D" parent="."]
