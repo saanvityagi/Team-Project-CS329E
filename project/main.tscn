@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5ennpg7mwrmb"]
+[gd_scene load_steps=8 format=3 uid="uid://b5ennpg7mwrmb"]
 
 [ext_resource type="PackedScene" uid="uid://4shmpdj4xvjh" path="res://player.tscn" id="1_di4pe"]
 [ext_resource type="Script" path="res://main.gd" id="1_wbref"]
 [ext_resource type="AudioStream" uid="uid://cokew480lmbv2" path="res://bgm.mp3" id="3_mum0y"]
+[ext_resource type="AudioStream" uid="uid://dbi1ftqddfaa5" path="res://gameover.wav" id="4_b66lp"]
 [ext_resource type="PackedScene" uid="uid://dqw2vae138t0h" path="res://guard.tscn" id="4_hydyy"]
-[ext_resource type="PackedScene" path="res://horizontalline.tscn" id="5_2mdxb"]
+[ext_resource type="PackedScene" uid="uid://dryf1rj4vlwpu" path="res://horizontalline.tscn" id="5_2mdxb"]
+[ext_resource type="PackedScene" uid="uid://cm64oy50o63s7" path="res://life_potion.tscn" id="5_op6c1"]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" groups=["player"]]
 script = ExtResource("1_wbref")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -30,10 +32,18 @@ color = Color(0.384335, 0.38924, 0.402707, 1)
 [node name="Player" parent="." instance=ExtResource("1_di4pe")]
 position = Vector2(619, 47)
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player" groups=["guard", "player"]]
+stream = ExtResource("4_b66lp")
+
+[node name="HealthLabel" type="Label" parent="Player"]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="StartPosition" type="Marker2D" parent="."]
 position = Vector2(195, 509)
 
 [node name="Guard" parent="." instance=ExtResource("4_hydyy")]
+position = Vector2(-116, -252)
 
 [node name="HorizontalLine" parent="." instance=ExtResource("5_2mdxb")]
 position = Vector2(114, -26)
@@ -45,3 +55,27 @@ offset_right = 890.0
 offset_bottom = 975.0
 theme_override_font_sizes/font_size = 50
 text = "Keys: 0"
+
+[node name="Guard2" parent="." instance=ExtResource("4_hydyy")]
+position = Vector2(846, -325)
+
+[node name="Guard3" parent="." instance=ExtResource("4_hydyy")]
+position = Vector2(963, 258)
+
+[node name="Guard4" parent="." instance=ExtResource("4_hydyy")]
+position = Vector2(618, -115)
+
+[node name="Guard5" parent="." instance=ExtResource("4_hydyy")]
+position = Vector2(355, -450)
+
+[node name="LifePotion" parent="." groups=["player"] instance=ExtResource("5_op6c1")]
+position = Vector2(-691, -570)
+
+[node name="LifePotion2" parent="." groups=["player"] instance=ExtResource("5_op6c1")]
+position = Vector2(-558, -270)
+
+[node name="LifePotion3" parent="." groups=["player"] instance=ExtResource("5_op6c1")]
+position = Vector2(391, 147)
+
+[node name="LifePotion4" parent="." groups=["player"] instance=ExtResource("5_op6c1")]
+position = Vector2(146, -450)
