@@ -30,6 +30,8 @@ func take_damage():
 	# Hide the guard and disable collision
 	sprite.hide()
 	collision_shape.set_deferred("disabled", true)
+	
+	get_tree().get_root().get_node("Main").add_key()
 
 	# Free the guard node after the sound finishes
 	await death_sound.finished
