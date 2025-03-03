@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://4shmpdj4xvjh" path="res://player.tscn" id="1_di4pe"]
 [ext_resource type="Script" path="res://main.gd" id="1_wbref"]
 [ext_resource type="AudioStream" uid="uid://cokew480lmbv2" path="res://bgm.mp3" id="3_mum0y"]
-[ext_resource type="PackedScene" path="res://guard.tscn" id="4_hydyy"]
-[ext_resource type="PackedScene" uid="uid://dryf1rj4vlwpu" path="res://horizontalline.tscn" id="5_2mdxb"]
+[ext_resource type="PackedScene" uid="uid://dqw2vae138t0h" path="res://guard.tscn" id="4_hydyy"]
+[ext_resource type="PackedScene" path="res://horizontalline.tscn" id="5_2mdxb"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_wbref")
@@ -37,3 +37,11 @@ position = Vector2(195, 509)
 
 [node name="HorizontalLine" parent="." instance=ExtResource("5_2mdxb")]
 position = Vector2(114, -26)
+
+[node name="KeyCounterLabel" type="Label" parent="."]
+offset_left = 643.0
+offset_top = 859.0
+offset_right = 890.0
+offset_bottom = 975.0
+theme_override_font_sizes/font_size = 50
+text = "Keys: 0"
