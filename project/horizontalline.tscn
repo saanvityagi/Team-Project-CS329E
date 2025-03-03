@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://dryf1rj4vlwpu"]
+[gd_scene load_steps=50 format=3 uid="uid://dryf1rj4vlwpu"]
 
 [ext_resource type="Texture2D" uid="uid://b4l5gkqd1bbqg" path="res://Images/maze tile.png" id="1_1oax3"]
 
@@ -132,7 +132,7 @@ size = Vector2(241.375, 16)
 size = Vector2(94.5, 17)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ry2km"]
-size = Vector2(16, 229.5)
+size = Vector2(16, 299.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ja42"]
 size = Vector2(20.5, 280)
@@ -142,6 +142,9 @@ size = Vector2(18.25, 147.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s5sod"]
 size = Vector2(209.25, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sbnqa"]
+size = Vector2(219.75, 17.75)
 
 [node name="HorizontalLine" type="StaticBody2D"]
 position = Vector2(111, -4)
@@ -534,12 +537,12 @@ scale = Vector2(0.340234, 0.0214845)
 texture = ExtResource("1_1oax3")
 
 [node name="CollisionShape2D44" type="CollisionShape2D" parent="."]
-position = Vector2(1199, 829)
+position = Vector2(1199, 864.125)
 shape = SubResource("RectangleShape2D_ry2km")
 
 [node name="Sprite2D44" type="Sprite2D" parent="."]
-position = Vector2(1198, 830)
-scale = Vector2(0.0421874, 0.492969)
+position = Vector2(1198, 867.5)
+scale = Vector2(0.0421874, 0.614062)
 texture = ExtResource("1_1oax3")
 
 [node name="CollisionShape2D45" type="CollisionShape2D" parent="."]
@@ -567,4 +570,13 @@ shape = SubResource("RectangleShape2D_s5sod")
 [node name="Sprite2D47" type="Sprite2D" parent="."]
 position = Vector2(1096.5, 718)
 scale = Vector2(0.857812, 0.0240235)
+texture = ExtResource("1_1oax3")
+
+[node name="CollisionShape2D48" type="CollisionShape2D" parent="."]
+position = Vector2(1091.88, 927.125)
+shape = SubResource("RectangleShape2D_sbnqa")
+
+[node name="Sprite2D48" type="Sprite2D" parent="."]
+position = Vector2(1094, 926)
+scale = Vector2(0.877148, 0.0277343)
 texture = ExtResource("1_1oax3")
